@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  3h-postgres:
+    image: postgres:11.3
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+  3h-mount:
+    image: alpine:3.9.4
+    volume:
+      - /Volumes/MaxData/HipHopHeuristics:/mnt/data
